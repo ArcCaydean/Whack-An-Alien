@@ -13,7 +13,8 @@ const song = new Audio(
 
 let volume = document.querySelector("#volume-control");
 volume.addEventListener("change", function (e) {
-  song.volume = e.currentTarget.value / 50;
+  song.volume = e.currentTarget.value / 5;
+  audioHit.volume = e.currentTarget.value / 5;
 });
 
 let time = 30;
