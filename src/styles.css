@@ -56,10 +56,12 @@ h2 {
   -webkit-user-select: none;
   touch-action: manipulation;
   cursor: pointer;
+  margin: 10px;
 }
 
 #timer {
   color: rgb(159, 47, 204);
+  padding: 12px;
 }
 
 .grid {
@@ -68,7 +70,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  cursor: url("./assets/mallet.png"), pointer;
+  /* cursor: url("https://github.com/ArcCaydean/Whack-An-Alien/blob/main/assets/blaster-cursor.png?raw=true"), auto;  */
 }
 
 .hole {
@@ -92,7 +94,7 @@ h2 {
 }
 
 .mole {
-  background: url("https://github.com/ArcCaydean/Whack-An-Alien/blob/main/assets/cute-alien.png?raw=true")
+  background: url("https://github.com/ArcCaydean/Whack-An-Alien/blob/main/assets/alien-face.png?raw=true")
     bottom center no-repeat;
   background-size: 40%;
   position: absolute;
@@ -104,10 +106,11 @@ h2 {
 }
 
 .hole.show .mole {
-  top: -70;
+  top: -50;
 }
 
-.button {
+/* old code for button, this is part of #start CSS ruleset */
+/* .button {
   color: #fff;
   padding: 15px 25px;
   border-radius: 100px;
@@ -126,12 +129,13 @@ h2 {
   box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   font-size: 16px;
-
   border: 0;
-
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-
   cursor: pointer;
+} */
+
+#score {
+  color: rgb(159, 47, 204);
 }
