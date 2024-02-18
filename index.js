@@ -2,13 +2,20 @@ const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); 
-const timerDisplay = document.querySelector('#timer'); 
-// const audioHit = new Audio(
-//   "https://github.com/ArcCaydean/Whack-An-Alien/blob/main/assets/plasmablaster-37114.mp3?raw=true"
-// );
+const timerDisplay = document.querySelector('#timer');
+const buttons = document.querySelector("button");
+const audioHit = new Audio(
+  "https://github.com/ArcCaydean/Whack-An-Alien/blob/main/assets/plasmablaster-37114.mp3?raw=true"
+);
 const song = new Audio(
   "https://github.com/ArcCaydean/Whack-An-Alien/blob/main/assets/alien-commandos-147564.mp3?raw=true"
 );
+
+let volume = document.querySelector("#volume-control");
+volume.addEventListener("change", function (e) {
+  song.volume = e.currentTarget.value / 5;
+  audioHit.volume = e.currentTarget.value / 5;
+});
 
 let time = 30;
 let timer;
@@ -215,6 +222,7 @@ function startTimer() {
 */
 function whack(event) {
   updateScore();
+  audioHit.play();
   return points;
 }
 
