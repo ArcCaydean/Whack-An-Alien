@@ -3,6 +3,12 @@ const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); 
 const timerDisplay = document.querySelector('#timer'); 
+// const audioHit = new Audio(
+//   "https://github.com/ArcCaydean/Whack-An-Alien/blob/main/assets/plasmablaster-37114.mp3?raw=true"
+// );
+const song = new Audio(
+  "https://github.com/ArcCaydean/Whack-An-Alien/blob/main/assets/alien-commandos-147564.mp3?raw=true"
+);
 
 let time = 30;
 let timer;
@@ -240,7 +246,6 @@ function setDuration(duration) {
 *
 */
 function stopGame(){
-  //stopAudio(song);  //optional. comment to remove
   clearInterval(timer);
   time = 30;
   return "game stopped";
@@ -259,6 +264,23 @@ function startGame() {
   setEventListeners();
   startTimer();
   return "game started";
+}
+
+function playAudio(audioObject) {
+  audioObject.play();
+}
+
+function loopAudio(audioObject) {
+  audioObject.loop = true;
+  playAudio(audioObject);
+}
+
+function stopAudio(audioObject) {
+  audioObject.pause();
+}
+
+function play() {
+  playAudio(song);
 }
 
 startButton.addEventListener("click", startGame);
